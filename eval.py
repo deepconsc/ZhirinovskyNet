@@ -20,11 +20,11 @@ for idx in range(args.steps):
     prob = model.forward(input_tensor)
     Trials.append(prob)
 
-alive = np.mean(Trials) > 0.5 
+alive = np.mean(Trials) > 0.45 
 
 print(f"{args.steps} Trial Runs have been finished.")
 
 if not alive: 
-    print(f"Congratulations! Theoretically he turns out to be DEAD with the probability of {np.mean(Trials)*100:.2f}.")
+    print(f"Congratulations! Theoretically he turns out to be DEAD with the probability of {np.mean(Trials):.2f}.")
 if alive: 
-    print(f"We're sorry to inform you that theoretically he's alive with the probability of {np.mean(Trials)*100:.2f}. We hope that practical, real-world results are better.")
+    print(f"We're sorry to inform you that theoretically he's alive with the probability of {np.mean(Trials):.2f}. We hope that practical, real-world results are better.")
