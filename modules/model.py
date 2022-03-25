@@ -1,6 +1,7 @@
 import torch 
 from torch import nn 
 from torchvision import models
+from torch.nn.functional import softmax as Softmax 
 
 class ZhirinovskyNet(nn.Module):
     def __init__(self, device: str):
@@ -26,5 +27,6 @@ class ZhirinovskyNet(nn.Module):
             from George Orwell's 1945's novel. 
         """
         outputs = self.encoder(input_tensor.to(self.device))
+        outputs = Softmax(outputs, dim=0)
         return outputs[0][341].item()
         
