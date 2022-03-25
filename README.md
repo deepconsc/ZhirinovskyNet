@@ -2,6 +2,7 @@
 ResNet-50 Encoder-based modelling for Schrödinger's Zhirinovsky Paradox
 
 !["Zhirinovsky and some unknown man."](https://c8.alamy.com/zooms/9/47f382ffccf04c1ebf669a14354d4957/tyfbac.jpg "Zhirinovsky and some unknown man.") 
+******
 ***Image: Zhirinovsky and some unknown man.***
 
 In the name of recent events, we aim to compute the probability of whether Zhirinovsky-  otherwise known as Squealer is alive or dead. 
@@ -35,4 +36,10 @@ Or run the evaluation with N trials, utilizing gpu.
 
 ```
 python3 eval.py --trials N --device cuda
+```
+
+Example output:
+```
+5 Trial Runs have been finished.
+Congratulations! Theoretically he turns out to be DEAD with the probability of 0.83.
 ```
