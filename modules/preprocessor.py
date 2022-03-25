@@ -4,6 +4,7 @@ from torch import sigmoid as Sigmoid
 from torch import randn as Normal
 from torch.nn.functional import interpolate as Interpolate 
 
+import os
 import requests
 from random import randint 
 
@@ -17,6 +18,10 @@ class Sampler():
         'https://georgianjournal.ge/media/_thumb/images/georgianews/2015/June/World/zhirinovsky.jpg']
     
     def download_sample(self):
+        exists = os.path.exists('the_third_pig.jpg')
+        if exists:
+            os.remove('the_third_pig.jpg')
+
         URL = self.URLS[randint(0, len(self.URLS)-1)]
         metadata = requests.get(URL).content
         with open('the_third_pig.jpg', 'wb') as handler:
